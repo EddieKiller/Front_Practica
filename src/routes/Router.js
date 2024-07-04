@@ -12,7 +12,7 @@ const FullLayout = Loadable(
 const Error = Loadable(lazy(() => import("../pages/Error/404")));
 
 /* ****Pages***** */
-const HomePage = Loadable(lazy(() => import("../pages/Home/Home1")));
+const HomePage = Loadable(lazy(() => import("../pages/Home/Home")));
 
 /* ****Routes***** */
 

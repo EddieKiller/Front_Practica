@@ -2,6 +2,7 @@ import { Backdrop, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import Header from "./Header";
+import Filtro from "./Filtro";
 
 function MainLayout() {
   const [loading, isLoading] = useState(true);
@@ -16,6 +17,7 @@ function MainLayout() {
       {!loading ? (
         <>
         <Header />
+        <Filtro/>
           <Outlet />
         </>
       ) : (

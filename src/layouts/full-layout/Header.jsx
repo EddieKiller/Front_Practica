@@ -46,8 +46,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Header() {
-  const pages = ["Products", "Pricing", "Blog"];
-  const settings = ["Profile", "Account", "Dashboard", "Logout"];
+  const pages = ["Inicio", "Favoritos", "Mis Cotizaciones", "Asesores"];
+  const settings = ["Perfil", "Ayuda", "Salir"];
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -173,7 +173,7 @@ function Header() {
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 1 }}>
                 <Avatar
                   alt="Remy Sharp"
-                  src="https://www.universidadesonline.cl/logos/original/logo-universidad-de-valparaiso.png"
+                  src="https://i.pinimg.com/736x/70/69/69/7069698c201c67de25f2ec4500dd3ba0.jpg"
                 />
               </IconButton>
             </Tooltip>

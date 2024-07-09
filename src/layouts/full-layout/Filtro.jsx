@@ -3,107 +3,94 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { FilterBox } from './FiltroStyles';
+import { FilterBox, SearchButton } from './FiltroStyles';  // Importar el botón de búsqueda
 
 function Filtro() {
-  const [age, setAge] = React.useState('');
-  const [gender, setGender] = React.useState('');
-  const [location, setLocation] = React.useState('');
-  const [power, setPower] = React.useState('');
-  const [affiliation, setAffiliation] = React.useState('');
+  const [purchaseType, setPurchaseType] = React.useState('');
+  const [propertyType, setPropertyType] = React.useState('');
+  const [region, setRegion] = React.useState('');
 
-  const handleAgeChange = (event) => {
-    setAge(event.target.value);
+  const handlePurchaseTypeChange = (event) => {
+    setPurchaseType(event.target.value);
   };
 
-  const handleGenderChange = (event) => {
-    setGender(event.target.value);
+  const handlePropertyTypeChange = (event) => {
+    setPropertyType(event.target.value);
   };
 
-  const handleLocationChange = (event) => {
-    setLocation(event.target.value);
+  const handleRegionChange = (event) => {
+    setRegion(event.target.value);
   };
 
-  const handlePowerChange = (event) => {
-    setPower(event.target.value);
-  };
-
-  const handleAffiliationChange = (event) => {
-    setAffiliation(event.target.value);
+  const handleSearchClick = () => {
+    // Lógica para la búsqueda, por ejemplo, enviar los filtros a una API
+    console.log('Buscar propiedades con:', {
+      purchaseType,
+      propertyType,
+      region
+    });
   };
 
   return (
     <FilterBox>
       <FormControl fullWidth>
-        <InputLabel id="select-age-label">Age</InputLabel>
+        <InputLabel id="select-purchase-type-label">Comprar/Arrendar</InputLabel>
         <Select
-          labelId="select-age-label"
-          id="select-age"
-          value={age}
-          label="Age"
-          onChange={handleAgeChange}
+          labelId="select-purchase-type-label"
+          id="select-purchase-type"
+          value={purchaseType}
+          label="Comprar/Arrendar"
+          onChange={handlePurchaseTypeChange}
         >
-          <MenuItem value={10}>Ten</MenuItem>
-          <MenuItem value={20}>Twenty</MenuItem>
-          <MenuItem value={30}>Thirty</MenuItem>
+          <MenuItem value="comprar">Comprar</MenuItem>
+          <MenuItem value="arrendar">Arrendar</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>
-        <InputLabel id="select-gender-label">Gender</InputLabel>
+        <InputLabel id="select-property-type-label">Tipo de Propiedad</InputLabel>
         <Select
-          labelId="select-gender-label"
-          id="select-gender"
-          value={gender}
-          label="Gender"
-          onChange={handleGenderChange}
+          labelId="select-property-type-label"
+          id="select-property-type"
+          value={propertyType}
+          label="Tipo de Propiedad"
+          onChange={handlePropertyTypeChange}
         >
-          <MenuItem value="male">Male</MenuItem>
-          <MenuItem value="female">Female</MenuItem>
+          <MenuItem value="casa">Casa</MenuItem>
+          <MenuItem value="departamento">Departamento</MenuItem>
+          <MenuItem value="oficina">Oficina</MenuItem>
         </Select>
       </FormControl>
       <FormControl fullWidth>
-        <InputLabel id="select-location-label">Location</InputLabel>
+        <InputLabel id="select-region-label">Región</InputLabel>
         <Select
-          labelId="select-location-label"
-          id="select-location"
-          value={location}
-          label="Location"
-          onChange={handleLocationChange}
-        >
-          <MenuItem value="ny">New York</MenuItem>
-          <MenuItem value="sf">San Francisco</MenuItem>
-          <MenuItem value="la">Los Angeles</MenuItem>
+          labelId="select-region-label"
+          id="select-region"
+          value={region}
+          label="Región"
+          onChange={handleRegionChange}
+        > 
+          <MenuItem value="Arica y Parinacota">Arica y Parinacota</MenuItem>
+          <MenuItem value="Tarapacá">Tarapacá</MenuItem>
+          <MenuItem value="Antofagasta">Antofagasta</MenuItem>
+          <MenuItem value="Atacama">Atacama</MenuItem>
+          <MenuItem value="Coquimbo">Coquimbo</MenuItem>
+          <MenuItem value="Valparaíso">Valparaíso</MenuItem>
+          <MenuItem value="metropolitana">Metropolitana</MenuItem>
+          <MenuItem value="O'Higgins">O'Higgins</MenuItem>
+          <MenuItem value="Maule">Maule</MenuItem>
+          <MenuItem value="Ñuble">Ñuble</MenuItem>
+          <MenuItem value="Biobío">Biobío</MenuItem>
+          <MenuItem value="La Araucanía">La Araucanía</MenuItem>
+          <MenuItem value="Los Ríos">Los Ríos</MenuItem>
+          <MenuItem value="Los Lagos">Los Lagos</MenuItem>
+          <MenuItem value="Aysén">Aysén</MenuItem>
+          <MenuItem value="Magallenes">Magallanes</MenuItem>
+          {/* Agrega más regiones según sea necesario */}
         </Select>
       </FormControl>
-      <FormControl fullWidth>
-        <InputLabel id="select-power-label">Power</InputLabel>
-        <Select
-          labelId="select-power-label"
-          id="select-power"
-          value={power}
-          label="Power"
-          onChange={handlePowerChange}
-        >
-          <MenuItem value="strength">Strength</MenuItem>
-          <MenuItem value="speed">Speed</MenuItem>
-          <MenuItem value="flight">Flight</MenuItem>
-          <MenuItem value="telepathy">Telepathy</MenuItem>
-        </Select>
-      </FormControl>
-      <FormControl fullWidth>
-        <InputLabel id="select-affiliation-label">Affiliation</InputLabel>
-        <Select
-          labelId="select-affiliation-label"
-          id="select-affiliation"
-          value={affiliation}
-          label="Affiliation"
-          onChange={handleAffiliationChange}
-        >
-          <MenuItem value="hero">Hero</MenuItem>
-          <MenuItem value="villain">Villain</MenuItem>
-          <MenuItem value="neutral">Neutral</MenuItem>
-        </Select>
-      </FormControl>
+      <SearchButton onClick={handleSearchClick}>
+        Buscar
+      </SearchButton>
     </FilterBox>
   );
 }

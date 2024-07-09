@@ -1,0 +1,58 @@
+.propiedades-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .card-propiedad {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px; /* Ajusta este valor según el tamaño deseado */
+    margin: 16px;
+  }
+  
+  .card-propiedad img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  .card-propiedad .info {
+    padding: 16px;
+    background-color: #fff;
+  }
+  
+  .card-propiedad p {
+    margin: 8px 0;
+  }
+
+  .info .precio {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    color: #333; 
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .page-link {
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+  }
+  
+  .page-link:hover {
+    background-color: #ddd;
+  }
+  

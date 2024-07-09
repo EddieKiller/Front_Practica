@@ -16,13 +16,17 @@ function MainLayout() {
     <>
       {!loading ? (
         <>
-        <Header />
-        <Filtro/>
+          <Header />
+          <Filtro/>
           <Outlet />
         </>
       ) : (
         <Backdrop
-          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          sx={{ 
+            color: "#000",  // Color del CircularProgress
+            backgroundColor: "#fff",  // Fondo blanco
+            zIndex: 1300  // Valor de zIndex alto sin usar el theme
+          }}
           open={true}
         >
           <CircularProgress color="inherit" />
